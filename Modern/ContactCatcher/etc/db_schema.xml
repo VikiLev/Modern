@@ -7,7 +7,7 @@
         </constraint>
         <column length="255" name="name" nullable="true" xsi:type="varchar"/>
         <column length="255" name="email" nullable="true" xsi:type="varchar"/>
-        <column length="255" name="telephone" nullable="true" xsi:type="varchar"/>
+        <column length="255" name="phone" nullable="true" xsi:type="varchar"/>
         <column length="255" name="topic" nullable="true" xsi:type="varchar"/>
         <column length="255" name="comment" nullable="true" xsi:type="varchar"/>
         <column xsi:type="timestamp" name="created_datetime" nullable="false" default="CURRENT_TIMESTAMP" on_update="false" comment="Created Datetime"/>
