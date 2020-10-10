@@ -13,6 +13,7 @@ use Modern\ContactCatcher\Model\ResourceModel\Contact as ResourceModel;
 use Modern\ContactCatcher\Model\ResourceModel\Contact\CollectionFactory;
 use Modern\ContactCatcher\Api\Model\Data\ContactInterface;
 use Modern\ContactCatcher\Api\Model\Data\ContactInterfaceFactory;
+use Modern\ContactCatcher\Api\Model\Data\ContactSearchResultsInterfaceFactory;
 
 /**
  * Class ContactRepository
@@ -40,6 +41,10 @@ class ContactRepository implements ContactRepositoryInterface
      * @var CollectionProcessorInterface
      */
     public $collectionProcessor;
+    /**
+     * @var ContactSearchResultsInterfaceFactory
+     */
+    public $searchResultFactory;
 
     /**
      * ContactRepository constructor.
@@ -54,8 +59,10 @@ class ContactRepository implements ContactRepositoryInterface
         ContactInterfaceFactory $contactInterfaceFactory,
         ResourceModel $resourceModel,
         CollectionFactory $collectionFactory,
-        CollectionProcessorInterface $collectionProcessor
+        CollectionProcessorInterface $collectionProcessor,
+        ContactSearchResultsInterfaceFactory $searchResultFactory
     ) {
+        $this->searchResultFactory = $searchResultFactory;
         $this->collectionProcessor = $collectionProcessor;
         $this->collectionFactory    = $collectionFactory;
         $this->resourceModel        = $resourceModel;
@@ -146,7 +153,6 @@ class ContactRepository implements ContactRepositoryInterface
         } catch (NoSuchEntityException $e) {
             $this->logger->warning(sprintf("contact %d already deleted or not found", $id));
         }
-
         return $this;
     }
 }

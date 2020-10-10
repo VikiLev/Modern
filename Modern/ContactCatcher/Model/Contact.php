@@ -32,6 +32,15 @@ class Contact extends AbstractModel implements ContactInterface
      */
     private $timezone;
 
+    /**
+     * Contact constructor.
+     * @param Context $context
+     * @param Registry $registry
+     * @param TimezoneInterface $timezone
+     * @param AbstractResource|null $resource
+     * @param AbstractDb|null $resourceCollection
+     * @param array $data
+     */
     public function __construct(
         Context $context,
         Registry $registry,
@@ -127,12 +136,12 @@ class Contact extends AbstractModel implements ContactInterface
     }
 
     /**
-     * @param string $topic
+     * @param string $comment
      * @return $this|ContactInterface
      */
-    public function setComment(string $topic): ContactInterface
+    public function setComment(string $comment): ContactInterface
     {
-        $this->setData(self::COMMENT_COL_NAME, $topic);
+        $this->setData(self::COMMENT_COL_NAME, $comment);
 
         return $this;
     }

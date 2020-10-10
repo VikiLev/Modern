@@ -2,7 +2,7 @@
       xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="content">
-            <uiComponent name="contact_form"/>
+            <uiComponent name="contactus_contact_form"/>
         </referenceContainer>
     </body>
 </page>

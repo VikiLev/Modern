@@ -1,9 +1,28 @@
 <?xml version="1.0"?>
-
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <preference for="Modern\ContactCatcher\Api\Model\Data\ContactInterface"
                 type="Modern\ContactCatcher\Model\Contact" />
     <preference for="Modern\ContactCatcher\Api\Model\ContactRepositoryInterface"
                 type="Modern\ContactCatcher\Repository\ContactRepository" />
+    <preference for="Modern\ContactCatcher\Api\Model\Data\ContactSearchResultsInterface"
+                type="Magento\Framework\Api\SearchResults"/>
+    <virtualType name="Modern\ContactCatcher\Model\ResourceModel\Contact\Grid\Collection"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">contactUs</argument>
+            <argument name="resourceModel" xsi:type="string">
+                Modern\ContactCatcher\Model\ResourceModel\Contact\Collection
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="contactus_contact_grid_data_source" xsi:type="string">
+                    Modern\ContactCatcher\Model\ResourceModel\Contact\Grid\Collection
+                </item>
+            </argument>
+        </arguments>
+    </type>
 </config>

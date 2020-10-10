@@ -10,10 +10,6 @@ namespace Modern\ContactCatcher\Api\Model\Data;
  */
 interface ContactInterface
 {
-//    const CACHE_TAG                 = 'vika_quickorder';
-
-//    const REGISTRY_KEY              = 'vika_quickorder_lesson';
-
     const ID_FIELD                  = 'entity_id';
 
     /**

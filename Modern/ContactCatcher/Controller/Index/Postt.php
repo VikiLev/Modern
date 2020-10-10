@@ -14,7 +14,7 @@ use Modern\ContactCatcher\Model\ContactFactory;
 use Modern\ContactCatcher\Api\Model\ContactRepositoryInterface;
 
 /**
- * Class Post
+ * Class Postt
  * @package Modern\ContactCatcher\Controller\Index
  */
 class Postt extends Action
@@ -36,6 +36,9 @@ class Postt extends Action
      * @var ContactRepositoryInterface
      */
     public $repository;
+    /**
+     * @var PageFactory
+     */
     public $pageFactory;
 
     /**
@@ -63,7 +66,10 @@ class Postt extends Action
         parent::__construct($context);
     }
 
-
+    /**
+     * @return \Magento\Framework\App\ResponseInterface|\Magento\Framework\Controller\ResultInterface|void
+     * @throws \Zend_Validate_Exception
+     */
     public function execute()
     {
         $params = $this->getRequest()->getParams();

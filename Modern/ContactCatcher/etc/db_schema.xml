@@ -12,5 +12,4 @@
         <column length="255" name="comment" nullable="true" xsi:type="varchar"/>
         <column xsi:type="timestamp" name="created_datetime" nullable="false" default="CURRENT_TIMESTAMP" on_update="false" comment="Created Datetime"/>
     </table>
-
 </schema>
