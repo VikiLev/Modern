@@ -5,7 +5,7 @@
     </head>
     <body>
         <referenceContainer name="content">
-            <block class="Modern\ContactCatcher\Block\ContactForm" name="contactForm" template="Modern_ContactCatcher::form.phtml">
+            <block class="Magento\Contact\Block\ContactForm" name="contactForm" template="Modern_ContactCatcher::form.phtml">
                 <container name="form.additional.info" label="Form Additional Info"/>
             </block>
         </referenceContainer>
